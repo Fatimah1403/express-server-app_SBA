@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+</head>
+<body>
+    <h1>User's List</h1>
+    <ul>
+        <% itemsData.forEach(item => { %>
+        <li><strong>Id:</strong> <%= item.id %>,
+            <strong>Quantity:</strong> <%= item.quantity %>,
+            <strong>Title:</strong> <%= item.title %>,
+            <strong>Content:</strong> <%= item.content %>
+            
+        </li>
+        <% }); %>
+     
+    </ul>
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

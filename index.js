@@ -7,44 +7,44 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, "./styles")));
 app.use(express.json());
 
-// const items = require("./routes/itemsRoutes");
-// const posts = require("./routes/postsRoutes");
-// const users = require("./routes/usersRoutes");
+const usersData = require("./data/users");
+const itemsData = require("./data/items");
 
 // rendering template pages
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/", (req, res) => {
-    // console.log("Rendering index")
-    res.render("home");
+// Users route
+app.get("/users", (req, res) => {
+    res.render("users", { usersData });
 });
 
+// Items route
+app.get("/items", (req, res) => {
+    res.render("items", { itemsData });
+});
+
+// About route
 app.get("/about", function(req, res) {
-    res.render("about")
+    res.render("about");
 });
 
+// Home route with name parameter
+app.get("/:name", (req, res) => {
+    const personName = req.params.name;
+    res.render("home", { person: personName });
+});
 
+// Default home route
+app.get("/", (req, res) => {
+    const defaultName = "";
+    res.render("home", { person: defaultName });
+});
 
-//middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ extended: true }));
- 
-// using the middleware
-// app.use("/api/users", users);
-// app.use("/api/posts", posts);
-// app.use("/api/items", items);
-
-
-
-// home route
-// app.get("/", (req, res) => {
-//     res.send("Home Page");
-// });
-// CUSTOM MIDDLEWARE : 404 NOT FOUND
+// 404 route
 app.use((req, res) => {
     res.status(404);
-    res.json( {error: "Resource not found"} )
+    res.json({ error: "Resource not found" });
 });
 
 app.listen(port, () => {

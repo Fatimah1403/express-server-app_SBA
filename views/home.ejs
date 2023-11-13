@@ -4,46 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/styles/home.css">
-</head>
-<style>
-    :root {
-        --primaryColor: #4032a8;
-        --secondaryColor: #a89632;
-        --whiteColor: #ffffff;
-        --tintBlueColor: #33adff;
-        --blackColor: #222222;
-        --softBlueColor: #3296a8;
-        --darkBlueColor: #2550BE;
-        --silverColor: #C0C0C0;
-        --greyColor: #f5f5f5;
-        --yellowColor:#e6b800;
-    }
-    * {
-        margin: 0;
-        padding: 0;
-    }
+    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+    <style>
+        :root {
+            --primaryColor: #4032a8;
+            --secondaryColor: #a89632;
+            --whiteColor: #ffffff;
+            --tintBlueColor: #33adff;
+            --blackColor: #222222;
+            --softBlueColor: #3296a8;
+            --darkBlueColor: #2550BE;
+            --silverColor: #C0C0C0;
+            --greyColor: #f5f5f5;
+            --yellowColor: #e6b800;
+        }
     
-    body {
-        background-image: url("/images/clothes_back.jpeg");
-        background-repeat: no-repeat;
-        width: 50%;
-        height: 50%;
-        background-color: var(--darkBlueColor);
-    }
-    h1{
-        font-size: 48px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-align: center;
-    }
-    p {
-        font-size: 16px; text-align: center;
-    }
-
-</style>
+        body {
+            align-items: center;
+            justify-content: center;
+            background-image: url("/images/clothes_back.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            background-color: var(--darkBlueColor);
+            margin: 0;
+            padding: 0;
+        }
+    
+        h1 {
+            font-size: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            color: var(--whiteColor);
+        }
+    
+        p {
+            font-size: 40px;
+            text-align: center;
+            color: var(--whiteColor);
+        }
+    </style>
+    
+</head>
 <body>
-   <h1>Welcome to the the my clothes website.</h1>
-   <p>Kindly patronize our one stop shop</p>
+    <h1>Welcome to  my clothes website, <%= person %></h1>
+    <p>Kindly patronize our one-stop shop.</p>
+
+    <script>
+      
+    </script>
 </body>
 </html>
