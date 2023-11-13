@@ -4,18 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6e6; /* Set your desired background color */
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #0066cc;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        strong {
+            color: #0066cc;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>User's List</h1>
     <ul>
         <% usersData.forEach(user => { %>
-        <li><strong>Name:</strong> <%= user.name %>,
+        <li>
+            <strong>Name:</strong> <%= user.name %>,
             <strong>Username:</strong> <%= user.username %>,
             <strong>Email:</strong> <%= user.email %>
         </li>
         <% }); %>
-     
     </ul>
-    <p><a href="/">Back to Home</a></p>
+    <p><a href="/" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">Back to Home</a></p>
 </body>
 </html>
