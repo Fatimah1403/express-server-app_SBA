@@ -3,21 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
+    <title>Item Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #0066cc;
+            text-align: center;
+        }
+
+        .back-link {
+            display: block;
+            margin-bottom: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .top-back-link {
+            display: block;
+            margin-bottom: 20px;
+            color: #0066cc;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        strong {
+            color: #0066cc;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>User's List</h1>
+    <a href="/" class="back-link">Back to Home</a>
+    <h1>Item's List</h1>
     <ul>
         <% itemsData.forEach(item => { %>
-        <li><strong>Id:</strong> <%= item.id %>,
+        <li>
+            <strong>Id:</strong> <%= item.id %>,
             <strong>Quantity:</strong> <%= item.quantity %>,
             <strong>Title:</strong> <%= item.title %>,
             <strong>Content:</strong> <%= item.content %>
-            
         </li>
         <% }); %>
-     
     </ul>
-    <p><a href="/">Back to Home</a></p>
+    <p><a href="/" class="back-link">Back to Home</a></p>
 </body>
 </html>

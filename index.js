@@ -9,24 +9,30 @@ app.use(express.json());
 
 const usersData = require("./data/users");
 const itemsData = require("./data/items");
+const postsData = require("./data/posts");
 
 // rendering template pages
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+// About route
+app.get("/about", function(req, res) {
+    res.render("about");
+});
 
 // Users route
 app.get("/users", (req, res) => {
     res.render("users", { usersData });
 });
 
+// Posts route
+app.get("/posts", (req, res) => {
+    res.render("posts", { postsData });
+});
+
 // Items route
 app.get("/items", (req, res) => {
     res.render("items", { itemsData });
-});
-
-// About route
-app.get("/about", function(req, res) {
-    res.render("about");
 });
 
 // Home route with name parameter
